@@ -42,7 +42,7 @@ public class TigerTest {
 
 	@Test
 	public void testEat() {
-		String expected = "Tigg1 has just eaten a food";
+		String expected = "Tigg1 has just eaten a Thing";
 
 		PrintStream originalOut = System.out;
 		OutputStream outStream = new ByteArrayOutputStream();
@@ -72,7 +72,7 @@ public class TigerTest {
 
 	@Test
 	public void testWhatDidYouEat() {
-		String expected = "Tigg1 Tiger has eaten a food!";
+		String expected = "Tigg1 Tiger has eaten a Thing!";
 		tigg1.eat(thing1);
 		
 		PrintStream originalOut = System.out;

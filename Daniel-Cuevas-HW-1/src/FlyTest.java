@@ -14,7 +14,7 @@ public class FlyTest {
 
 	@Test
 	public void testEat() {
-		String expected = "fly1 has just eaten a food";
+		String expected = "fly1 has just eaten a Thing";
 		
 		PrintStream originalOut = System.out;
 		OutputStream outStream = new ByteArrayOutputStream();
@@ -88,11 +88,9 @@ public class FlyTest {
 		String expected = "Creature";
 		assertEquals(expected, fly4.getName());
 	}
-
 	@Test
-	public void testWhatDidYouEat() {
-		//String expected = "Batman Bat Has had nothing to eat!";
-		String expected = "fly1 Fly has eaten a food!";
+	public void testWhatDidYouEatThing() {
+		String expected = "fly1 Fly has eaten a Thing!";
 		fly1.eat(thing1);
 		
 		PrintStream originalOut = System.out;
@@ -105,7 +103,22 @@ public class FlyTest {
 		assertEquals(expected+lineseperator,outStream.toString());	
 		System.setOut(originalOut);
 	}
-	
+	@Test
+	public void testWhatDidYouEatTiger() {
+		String expected = "fly1 Fly has had nothing to eat!";
+		Tiger tig2 = new Tiger();
+		fly1.eat(tig2);
+		
+		PrintStream originalOut = System.out;
+		OutputStream outStream = new ByteArrayOutputStream();
+		PrintStream printStream = new PrintStream(outStream);
+		System.setOut(printStream);
+		
+		fly1.whatDidYouEat();
+		
+		assertEquals(expected+lineseperator,outStream.toString());	
+		System.setOut(originalOut);
+	}
 	@Test
 	public void testWhatDidYouEatCreature() {
 		String expected = "fly1 Fly has had nothing to eat!";

@@ -44,15 +44,17 @@ public class TestCreature {
 		for(int m=4; m <THING_COUNT; m++){
 			for(int n = THING_COUNT-1; n >= 4; n--){
 				((Creature) thingArray[m]).eat(thingArray[n]);
+				((Creature) thingArray[m]).whatDidYouEat();
 			}
 			((Creature) thingArray[m]).move();
-			System.out.println("\n");
+
 		}
 		for(int k = 0; k < THING_COUNT; k++){
 			((Creature) thingArray[7]).eat(thingArray[k]);
 			((Creature) thingArray[7]).whatDidYouEat();
 			((Creature) thingArray[8]).eat(thingArray[k]);
 			((Creature) thingArray[8]).whatDidYouEat();
+			System.out.println("\n");
 		}
 	}
 }

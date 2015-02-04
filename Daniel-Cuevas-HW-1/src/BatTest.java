@@ -17,7 +17,7 @@ public class BatTest {
 	
 	@Test
 	public void testEat() {
-		String expected = "Batty has just eaten a Antty";
+		String expected = "Batty has just eaten a Ant";
 
 		PrintStream originalOut = System.out;
 		OutputStream outStream = new ByteArrayOutputStream();
@@ -89,7 +89,7 @@ public class BatTest {
 
 	@Test
 	public void testWhatDidYouEat() {
-		String expected = "Batty Bat has eaten a tig1!";
+		String expected = "Batty Bat has eaten a Tiger!";
 		bat1.eat(tig1);
 		
 		PrintStream originalOut = System.out;
