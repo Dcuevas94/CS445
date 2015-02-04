@@ -32,6 +32,7 @@ all:
 	sudo apt-get install default-jdk
 	make
 	java TestCreature
+	
 allwithkill:
 	sudo apt-get update
 	sudo apt-get install default-jre
