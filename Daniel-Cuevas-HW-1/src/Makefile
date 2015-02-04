@@ -30,5 +30,12 @@ all:
 	sudo apt-get update
 	sudo apt-get install default-jre
 	sudo apt-get install default-jdk
-	classes
+	make
 	java TestCreature
+allwithkill:
+	sudo apt-get update
+	sudo apt-get install default-jre
+	sudo apt-get install default-jdk
+	make
+	java TestCreature
+	make clean
