@@ -14,8 +14,7 @@ CLASSES = \
 	Tiger.java \
 	TestCreature.java
 
-default: 
-	classes
+default: classes
 	java TestCreature
 
 classes: $(CLASSES:.java=.class)
