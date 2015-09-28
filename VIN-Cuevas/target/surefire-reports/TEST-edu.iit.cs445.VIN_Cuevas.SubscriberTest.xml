@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="18" failures="0" name="edu.iit.cs445.VIN_Cuevas.SubscriberTest" time="0.511" errors="0" skipped="0">
+<testsuite tests="18" failures="0" name="edu.iit.cs445.VIN_Cuevas.SubscriberTest" time="0.526" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -25,7 +25,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1126881943403703981.tmp"/>
+    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf121019630015958041.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/ivan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,22 +62,22 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_name" time="0.036"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_fails" time="0.03"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_name" time="0.056"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_fails" time="0.033"/>
   <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_email" time="0.027"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_phone_partial" time="0.047"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_formatted_phone_number_matches" time="0.026"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_phone_full" time="0.023"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_default_monthly_preference" time="0.024"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_changing_the_monthly_preference" time="0.023"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_base_case" time="0.022"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriber" time="0.032"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberWithAddress" time="0.049"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberEmail" time="0.028"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberPhone" time="0.021"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberAddress" time="0.023"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_FacebookTwitter_Subscriber" time="0.022"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_setting_address_defaultsubscriber" time="0.024"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_subscriber_update" time="0.028"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_toString" time="0.026"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_phone_partial" time="0.028"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_formatted_phone_number_matches" time="0.023"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_search_match_phone_full" time="0.031"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_default_monthly_preference" time="0.028"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_changing_the_monthly_preference" time="0.029"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_base_case" time="0.045"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriber" time="0.029"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberWithAddress" time="0.023"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberEmail" time="0.026"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberPhone" time="0.023"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_nondefault_subscriberAddress" time="0.029"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_FacebookTwitter_Subscriber" time="0.023"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_setting_address_defaultsubscriber" time="0.026"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_subscriber_update" time="0.023"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.SubscriberTest" name="test_toString" time="0.024"/>
 </testsuite>

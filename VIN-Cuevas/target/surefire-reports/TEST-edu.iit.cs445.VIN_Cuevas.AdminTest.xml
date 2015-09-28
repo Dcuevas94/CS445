@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="2" name="edu.iit.cs445.VIN_Cuevas.AdminTest" time="0.167" errors="0" skipped="0">
+<testsuite tests="4" failures="2" name="edu.iit.cs445.VIN_Cuevas.AdminTest" time="0.146" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -25,7 +25,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1126881943403703981.tmp"/>
+    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf121019630015958041.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/ivan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,9 +62,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_toString" time="0.029"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_nonDefault" time="0.035"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_default" time="0.036">
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_toString" time="0.036"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_nonDefault" time="0.037"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_default" time="0.033">
     <failure message="expected:&lt;33&gt; but was:&lt;35&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;33&gt; but was:&lt;35&gt;
 	at org.junit.Assert.fail(Assert.java:93)
 	at org.junit.Assert.failNotEquals(Assert.java:647)
@@ -104,17 +104,17 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-err>Sep 27, 2015 10:56:23 PM org.glassfish.jersey.server.ApplicationHandler initialize
+    <system-err>Sep 27, 2015 11:35:01 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.NetworkListener start
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.HttpServer start
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer-14] Started.
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
 INFO: Stopped listener bound to [localhost:8080]
 </system-err>
   </testcase>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_setting_properties" time="0.067">
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AdminTest" name="test_admin_setting_properties" time="0.04">
     <failure message="expected:&lt;35&gt; but was:&lt;36&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;35&gt; but was:&lt;36&gt;
 	at org.junit.Assert.fail(Assert.java:93)
 	at org.junit.Assert.failNotEquals(Assert.java:647)
@@ -154,13 +154,13 @@ INFO: Stopped listener bound to [localhost:8080]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-err>Sep 27, 2015 10:56:23 PM org.glassfish.jersey.server.ApplicationHandler initialize
+    <system-err>Sep 27, 2015 11:35:01 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.7 2014-03-12 18:11:31...
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.NetworkListener start
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.NetworkListener start
 INFO: Started listener bound to [localhost:8080]
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.HttpServer start
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.HttpServer start
 INFO: [HttpServer-15] Started.
-Sep 27, 2015 10:56:23 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
+Sep 27, 2015 11:35:01 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
 INFO: Stopped listener bound to [localhost:8080]
 </system-err>
   </testcase>
