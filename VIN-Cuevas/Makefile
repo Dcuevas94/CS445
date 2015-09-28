@@ -13,6 +13,8 @@ clean:
 
 java: 
 	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get dist-upgrade
 	sudo apt-get install default-jre
 	sudo apt-get install default-jdk
 	sudo apt-get install maven
@@ -20,7 +22,10 @@ java:
 
 all: 
 	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get dist-upgrade
 	sudo apt-get install default-jre
 	sudo apt-get install default-jdk
+	sudo apt-get install maven
 	mvn clean
 	make
