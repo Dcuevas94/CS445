@@ -11,6 +11,9 @@ default:
 clean:
 	mvn compile
 
+test:
+	mvn test
+
 java: 
 	sudo apt-get update
 	sudo apt-get install default-jre
