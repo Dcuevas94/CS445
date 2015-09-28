@@ -28,9 +28,7 @@ chrome:
 	sudo dpkg -i google-chrome-stable_current_i386.deb
 
 all: 
-	sudo apt-get update
-	sudo apt-get install default-jre
-	sudo apt-get install default-jdk
-	sudo apt-get install maven
-	mvn clean
+	make java
+	make chrome
+	make clean
 	make
