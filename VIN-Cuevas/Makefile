@@ -31,6 +31,5 @@ chrome:
 
 all: 
 	make java
-	make chrome
 	make clean
 	make
