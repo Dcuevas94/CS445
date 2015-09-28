@@ -6,10 +6,10 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 default: 
-	mvn clean compile exec:java
+	mvn compile exec:java
 	
 clean:
-	mvn clean
+	mvn compile
 
 java: 
 	sudo apt-get update
