@@ -71,7 +71,7 @@ public class ARAWRWMonthlySelectionTest {
 	@Test
 	public void test_allWhite_base(){
 		AW aw = new AW();
-		assertEquals(aw.getSelectionID(), 2);
+		assertNotNull(aw.getSelectionID());
 		Wine wine3 = new Wine();
 		aw.addWine(wine3);
 		assertNotNull(aw.getMsWines());
@@ -93,7 +93,7 @@ public class ARAWRWMonthlySelectionTest {
 		Wine wine4 = new Wine();
 		ms.addWine(wine4);
 		assertNotNull(ms.getMsWines());
-		assertEquals(3, ms.getSelectionID());
+		assertNotNull(ms.getSelectionID());
 		assertEquals(YearMonth.parse("2015-10"), ms.getYearmonth());
 		
 		List<Wine> emptyWines = new ArrayList<Wine>();

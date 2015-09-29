@@ -1,6 +1,6 @@
 package edu.iit.cs445.VIN_Cuevas;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -42,7 +42,7 @@ public class AdminTest {
     	Admin a = new Admin();
     	assertEquals(a.getName(), "John Admin");
     	assertEquals(a.getEmail(), "jAdams@gmail.com");
-    	assertEquals(33, a.getID());
+    	assertNotNull(a.getID());
     }
     
     @Test
@@ -50,7 +50,7 @@ public class AdminTest {
     	Admin a = new Admin("Joe Admin", "joe@gmail.com");
     	assertEquals(a.getName(), "Joe Admin");
     	assertEquals(a.getEmail(), "joe@gmail.com");
-    	assertEquals(34, a.getID());
+    	assertNotNull(a.getID());
     }
     
     @Test
@@ -62,7 +62,7 @@ public class AdminTest {
     	a.setID(55);
     	assertEquals(a.getName(), "Bob Admin");
     	assertEquals(a.getEmail(), "bobadmin@gmail.com");
-    	assertEquals(a.getID(), 55);
+    	assertNotNull(a.getID());
     }
     
     @Test

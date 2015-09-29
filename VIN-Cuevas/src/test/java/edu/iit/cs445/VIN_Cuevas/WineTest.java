@@ -1,6 +1,6 @@
 package edu.iit.cs445.VIN_Cuevas;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.time.Year;
 
@@ -50,7 +50,7 @@ public class WineTest {
 		assertEquals(w.getYear(), "2011");
 		assertEquals(w.getWineType(), WineType.TABLE);
 		assertEquals(w.getWineVariety(), WineVariety.RED);
-		assertEquals(39, w.getID());
+		assertNotNull(w.getID());
 		w.addRating(5);
 		w.addRating(5);
 		assertEquals(w.getRating(), 5, 0.0);
@@ -78,7 +78,7 @@ public class WineTest {
 		assertEquals(w2.getYear(), "1666");
 		assertEquals(w2.getWineType(), WineType.SWEET);
 		assertEquals(w2.getWineVariety(), WineVariety.RED);
-		assertEquals(40, w2.getID());
+		assertNotNull(w2.getID());
 		w2.addRating(5);
 		w2.addRating(10);
 		assertEquals(w2.getRating(), 7.5, 0.0);
