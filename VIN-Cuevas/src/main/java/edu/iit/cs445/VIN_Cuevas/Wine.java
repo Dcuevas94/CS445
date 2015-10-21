@@ -24,7 +24,7 @@ public class Wine {
 		this.year = Year.parse("2011");
 		this.wineType = WineType.TABLE;
 		this.wineVariety = WineVariety.RED;
-		this.ID = IdGenerator.newIDwineOnly();
+		this.ID = IdGenerator.newIDwine();
 	}
 	
 	public Wine(WineVariety winevariety, WineType winetype, String labelname, String grape, String region, String country, String maker, Year year){
@@ -36,60 +36,72 @@ public class Wine {
 		this.year = year;
 		this.wineType = winetype;
 		this.wineVariety = winevariety;
-		this.ID = IdGenerator.newIDwineOnly();
+		this.ID = IdGenerator.newIDwine();
 	}
 	
 	public void addRating(int rate){
-		numberOfRatings++;
-		rating = rating*((float)(numberOfRatings - 1)/numberOfRatings)+ (float)rate/numberOfRatings;
+		if ( rate <= 10 && rate >= 0){
+			numberOfRatings++;
+			rating = rating*((float)(numberOfRatings - 1)/numberOfRatings)+ (float)rate/numberOfRatings;
+		} else
+		{
+			System.out.println("Rating must be between 1 and 10");
+		}
 	}
 	
 
-	public boolean isMatch(String kw){
-		if(isMatchVariety(kw) || isMatchType(kw) || isMatchLabel(kw) || isMatchGrape(kw) || isMatchRegion(kw) || isMatchCountry(kw) || isMatchMaker(kw) || isMatchYear(kw)) {
+	public boolean isMatch(Wine kw){
+		if(isMatchVariety(kw.getWineVariety()) &&
+			isMatchType(kw.getWineType()) &&
+			isMatchLabel(kw.getLabelName()) &&
+			isMatchGrape(kw.getGrape()) &&
+			isMatchRegion(kw.getRegion()) &&
+			isMatchCountry(kw.getCountry()) &&
+			isMatchMaker(kw.getMaker()) &&
+			isMatchYear(kw.getYear())) 
+		{
 			return true;
 		} else
 			return false;
 	}
 	
-	public boolean isMatchVariety(String kw){
-		String regex = "(?i).*" + kw +".*";
-		return this.wineVariety.name().matches(regex);
+	public boolean isMatchVariety(WineVariety kw){
+		return this.getWineVariety().equals(kw);
+		//return this.wineVariety.name().matches(regex);
 	}
 	
-	public boolean isMatchType(String kw){
-		String regex = "(?i).*" + kw +".*";
-		return this.wineType.name().matches(regex);
+	public boolean isMatchType(WineType kw){
+		return this.getWineType().equals(kw);
+		//return this.wineType.name().matches(regex);
 	}
 	
 	public boolean isMatchLabel(String kw){
 		String regex = "(?i).*" + kw +".*";
-		return this.labelName.matches(regex);
+		return this.getLabelName().matches(regex);
 	}
 	
 	public boolean isMatchGrape(String kw){
 		String regex = "(?i).*" + kw +".*";
-		return this.grape.matches(regex);
+		return this.getGrape().matches(regex);
 	}
 	
 	public boolean isMatchRegion(String kw){
 		String regex = "(?i).*" + kw +".*";
-		return this.region.matches(regex);
+		return this.getRegion().matches(regex);
 	}
 	
 	public boolean isMatchCountry(String kw){
 		String regex = "(?i).*" + kw +".*";
-		return this.country.matches(regex);
+		return this.getCountry().matches(regex);
 	}
 	
 	public boolean isMatchMaker(String kw){
 		String regex = "(?i).*" + kw +".*";
-		return this.maker.matches(regex);
+		return this.getMaker().matches(regex);
 	}
 	
 	public boolean isMatchYear(String kw){
-		String regex = "(?i).*" + kw +".*";
-		return this.year.toString().matches(regex);
+		return this.getYear().toString().matches(kw);
 	}
 	
 	public String getLabelName() {

@@ -55,20 +55,21 @@ public class WineTest {
 		w.addRating(5);
 		assertEquals(w.getRating(), 5, 0.0);
 		assertEquals(w.getNumberOfRatings(), 2);
-		assertEquals(w.isMatch(w.getLabelName()), true);
-		assertEquals(w.isMatch("hello"), false);
-		assertEquals(w.isMatch(w.getCountry()), true);
-		assertEquals(w.isMatch(w.getGrape()), true);
-		assertEquals(w.isMatch(w.getMaker()), true);
-		assertEquals(w.isMatch(w.getRegion()), true);
-		assertEquals(w.isMatch(w.getYear()), true);
-		assertEquals(w.isMatchType(w.getWineType().toString()), true);
-		assertEquals(w.isMatch(w.getWineVariety().toString()), true);
-		assertEquals(w.isMatch("Napa"), true);
+		assertEquals(w.isMatch(w), true);
+//		assertEquals(w.isMatch("hello"), false);
+//		assertEquals(w.isMatch(w.getCountry()), true);
+//		assertEquals(w.isMatch(w.getGrape()), true);
+//		assertEquals(w.isMatch(w.getMaker()), true);
+//		assertEquals(w.isMatch(w.getRegion()), true);
+//		assertEquals(w.isMatch(w.getYear()), true);
+//		assertEquals(w.isMatchType(w.getWineType().toString()), true);
+//		assertEquals(w.isMatch(w.getWineVariety().toString()), true);
+//		assertEquals(w.isMatch("Napa"), true);
 	}
 	
 	@Test
 	public void test_nonDefaultWine(){
+		Wine w = new Wine();
 		Wine w2 = new Wine(WineVariety.RED, WineType.SWEET, "The Beast", "black", "Hell", "Tarturus", "Satan", Year.parse("1666"));
 		assertEquals(w2.getLabelName(), "The Beast");
 		assertEquals(w2.getGrape(), "black");
@@ -81,19 +82,31 @@ public class WineTest {
 		assertNotNull(w2.getID());
 		w2.addRating(5);
 		w2.addRating(10);
+		w2.addRating(30);
+		w2.addRating(-1);
 		assertEquals(w2.getRating(), 7.5, 0.0);
 		assertEquals(w2.getNumberOfRatings(), 2);
-		assertEquals(w2.isMatch(w2.getLabelName()), true);
-		assertEquals(w2.isMatch("hello"), false);
-		assertEquals(w2.isMatch(w2.getCountry()), true);
-		assertEquals(w2.isMatch(w2.getGrape()), true);
-		assertEquals(w2.isMatch(w2.getMaker()), true);
-		assertEquals(w2.isMatch(w2.getRegion()), true);
-		assertEquals(w2.isMatch(w2.getYear()), true);
-		assertEquals(w2.isMatchType(w2.getWineType().toString()), true);
-		assertEquals(w2.isMatch(w2.getWineVariety().toString()), true);
-		assertEquals(w2.isMatch("Napa"), false);
-		assertEquals(w2.isMatch("hell"), true);
+		assertEquals(w2.isMatch(w2), true);
+		assertEquals(w2.isMatch(w), false);
+		w.setWineVariety(w2.getWineVariety());
+		w.setWineType(w2.getWineType());
+		w.setLabelName(w2.getLabelName());
+		w.setGrape(w2.getGrape());
+		w.setRegion(w2.getRegion());
+		w.setCountry(w2.getCountry());
+		w.setMaker(w2.getMaker());
+		w.setYear(Year.parse(w2.getYear()));
+		assertEquals(w2.isMatch(w), true);
+//		assertEquals(w2.isMatch("hello"), false);
+//		assertEquals(w2.isMatch(w2.getCountry()), true);
+//		assertEquals(w2.isMatch(w2.getGrape()), true);
+//		assertEquals(w2.isMatch(w2.getMaker()), true);
+//		assertEquals(w2.isMatch(w2.getRegion()), true);
+//		assertEquals(w2.isMatch(w2.getYear()), true);
+//		assertEquals(w2.isMatchType(w2.getWineType().toString()), true);
+//		assertEquals(w2.isMatch(w2.getWineVariety().toString()), true);
+//		assertEquals(w2.isMatch("Napa"), false);
+//		assertEquals(w2.isMatch("hell"), true);
 	}
 	
 	@Test

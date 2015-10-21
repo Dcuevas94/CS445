@@ -7,7 +7,7 @@ import java.util.List;
 public abstract class MonthlySelection {
 	protected MonthlySelectionType monthlyselectiontype;
 	private YearMonth yearmonth;
-	private List<Wine> msWines = new ArrayList<Wine>();
+	private List<Wine> msWines = new ArrayList<Wine>(6);
 	private int selectionID;
 
 	public MonthlySelection(){
