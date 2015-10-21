@@ -56,7 +56,7 @@ public class AdminTest {
     @Test
     public void test_admin_setting_properties(){
     	Admin a = new Admin();
-    	assertEquals(35, a.getID());
+    	assertNotNull(a.getID());
     	a.setName("Bob Admin");
     	a.setEmail("bobadmin@gmail.com");
     	a.setID(55);

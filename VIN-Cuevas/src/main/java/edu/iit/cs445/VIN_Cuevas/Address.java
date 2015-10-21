@@ -49,4 +49,34 @@ public class Address {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
+	
+	public boolean isMatch(Address address){
+		if( isMatchCity(address.city) &&
+			isMatchState(address.state) &&
+			isMatchStreet(address.street) &&
+			isMatchZip(address.zip)){
+			return true;
+		} else
+			return false;
+	}
+	
+	public boolean isMatchCity(String kw){
+		String regex = "(?i).*" + kw + ".*";
+		return this.getCity().matches(regex);
+	}
+	
+	public boolean isMatchState(String kw){
+		String regex = "(?i).*" + kw + ".*";
+		return this.getState().matches(regex);
+	}
+	
+	public boolean isMatchStreet(String kw){
+		String regex = "(?i).*" + kw + ".*";
+		return this.getStreet().matches(regex);
+	}
+	
+	public boolean isMatchZip(String kw){
+		String regex = "(?i).*" + kw + ".*";
+		return this.getZip().matches(regex);
+	}
 }

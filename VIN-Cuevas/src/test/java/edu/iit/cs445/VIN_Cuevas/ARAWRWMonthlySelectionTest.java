@@ -51,7 +51,7 @@ public class ARAWRWMonthlySelectionTest {
 		rwNew.addWine(wine0);
 		assertNotNull(rwNew.getMsWines());
 //		System.out.println(rwNew.getYearmonth());
-		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-10"));
+		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-11"));
 	}
 	
 	@Test
@@ -62,7 +62,7 @@ public class ARAWRWMonthlySelectionTest {
 		wine1.setWineVariety(WineVariety.RED);
 		ar.addWine(wine1);
 		assertNotNull(ar.getMsWines());
-		assertEquals(YearMonth.parse("2015-10"), ar.getYearmonth());
+		assertEquals(YearMonth.parse("2015-11"), ar.getYearmonth());
 		Wine wine2 = new Wine();
 		wine2.setWineVariety(WineVariety.WHITE);
 		ar.addWine(wine2);
@@ -75,7 +75,7 @@ public class ARAWRWMonthlySelectionTest {
 		Wine wine3 = new Wine();
 		aw.addWine(wine3);
 		assertNotNull(aw.getMsWines());
-		assertEquals(YearMonth.parse("2015-10"), aw.getYearmonth());
+		assertEquals(YearMonth.parse("2015-11"), aw.getYearmonth());
 		Wine wine4 = new Wine();
 		wine4.setWineVariety(WineVariety.WHITE);
 		aw.addWine(wine4);
