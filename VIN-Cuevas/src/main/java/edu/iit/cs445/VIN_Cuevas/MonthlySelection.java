@@ -1,17 +1,16 @@
 package edu.iit.cs445.VIN_Cuevas;
 
 import java.time.YearMonth;
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class MonthlySelection {
 	protected MonthlySelectionType monthlyselectiontype;
 	private YearMonth yearmonth;
-	private List<Wine> msWines = new ArrayList<Wine>(6);
+	protected List<Wine> msWines; // = new ArrayList<Wine>(6);
 	private int selectionID;
 
 	public MonthlySelection(){
-		this.yearmonth = YearMonth.now().plusMonths(1);
+		this.yearmonth = YearMonth.now(); //.plusMonths(1);
 		this.selectionID = IdGenerator.newIDms();
 	}
 	

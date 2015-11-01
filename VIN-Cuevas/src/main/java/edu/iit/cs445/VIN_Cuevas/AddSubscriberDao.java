@@ -2,6 +2,7 @@ package edu.iit.cs445.VIN_Cuevas;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,8 +28,18 @@ private Map<String, Subscriber> subscribers;
 	
 	public Subscriber addSubscriber(Subscriber subscriber){
 		String subID = Integer.toString(subscriber.getID());
-			subscribers.put(subID, subscriber);
-			return(subscriber);
+		subscribers.put(subID, subscriber);
+		return(subscriber);
+	}
+	
+	public List<Shipments> getShipments(String id){
+		//subscriber.getShipments();
+		return(subscribers.get(id).getShipments());
+	}
+	
+	public Shipments addShipment(String id, Shipments shipments){
+		subscribers.get(id).addShipments(shipments);
+		return shipments;
 	}
 	
 	//PUT using id

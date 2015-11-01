@@ -14,7 +14,8 @@ import org.junit.Test;
 public class AdminTest {
 
 	private HttpServer server;
-    private WebTarget target;
+    @SuppressWarnings("unused")
+	private WebTarget target;
 
     @Before
     public void setUp() throws Exception {
@@ -32,7 +33,8 @@ public class AdminTest {
         target = c.target(Main.BASE_URI);
     }
 
-    @After
+    @SuppressWarnings("deprecation")
+	@After
     public void tearDown() throws Exception {
         server.stop();
     }

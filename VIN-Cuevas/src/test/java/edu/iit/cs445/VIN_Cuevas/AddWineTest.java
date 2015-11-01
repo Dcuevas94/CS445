@@ -22,6 +22,7 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class AddWineTest extends JerseyTest{
 
 	private int wine1_id;

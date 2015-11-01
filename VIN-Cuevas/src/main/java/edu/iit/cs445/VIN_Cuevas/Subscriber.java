@@ -1,5 +1,8 @@
 package edu.iit.cs445.VIN_Cuevas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Subscriber {
 
 	private String name;
@@ -10,6 +13,8 @@ public class Subscriber {
 	private Address address;
 	private int id;
 	private MonthlySelectionType monthlyselectiontype;
+	private List<Shipments> shipments;
+	private List<Wine> wines;
 	
 	public Subscriber(){
 		int subID = IdGenerator.newID();
@@ -19,6 +24,8 @@ public class Subscriber {
 		this.address = new Address();
 		this.monthlyselectiontype = MonthlySelectionType.RW;
 		this.id = subID;
+		this.shipments = new ArrayList<Shipments>();
+		this.wines = new ArrayList<Wine>();
 	}
 	
 	public Subscriber(String name, String email, String phone, Address address) {
@@ -29,14 +36,10 @@ public class Subscriber {
 		this.address = address;
 		this.monthlyselectiontype = MonthlySelectionType.RW;
 		this.id = IdGenerator.newID();
+		this.shipments = new ArrayList<Shipments>();
+		this.wines = new ArrayList<Wine>();
 	}
-//	public Address(){
-//		this.street = "555 State St.";
-//		this.city = "Chicago";
-//		this.state = "IL";
-//		this.zip = "60609";
-//	}
-//	
+
 	public Subscriber(String name, String email, String phone, Address address, String fb, String tw) {
 		this.name = name;
 		this.email = email;
@@ -47,6 +50,8 @@ public class Subscriber {
 		this.facebook = fb;
 		this.monthlyselectiontype = MonthlySelectionType.RW;
 		this.id = IdGenerator.newID();
+		this.shipments = new ArrayList<Shipments>();
+		this.wines = new ArrayList<Wine>();
 	}
 
 	public void updateInfo(String name, String email, String phone, Address address){
@@ -76,7 +81,8 @@ public class Subscriber {
 	public boolean isMatch(String kw){
 		if(isMatchingEmail(kw) || isMatchingPhone(kw) || isMatchName(kw)){
 			return true;
-		} else return false;
+		} else 
+			return false;
 	}
 	
 	public String getName() {
@@ -130,10 +136,34 @@ public class Subscriber {
 		this.monthlyselectiontype = type;
 	}
 	
+	public List<Shipments> getShipments(){
+		return shipments;
+	}
+	
+	public void setShipments(List<Shipments> shipments){
+		this.shipments = shipments;
+	}
+	
+	public void addShipments(Shipments shipment){
+		this.shipments.add(shipment);
+	}
+	
+	public List<Wine> getWines(){
+		return this.wines;
+	}
+	
+	public void setWines(List<Wine> wines){
+		this.wines = wines;
+	}
+	
+	public void addWines(Wine wine){
+		this.wines.addAll(wines);
+	}
+	
     @Override
 	public String toString(){
     	String output="The name of the Subscriber is " +name+ " The email is " +email+
-    			" The phone number is " +phone+" The address is "  +address+
+    			" The phone number is " +phone+" the ID is: " +id+ " The address is "  +address+
     			" The monthly selection is " +monthlyselectiontype;
     	return output;
     }

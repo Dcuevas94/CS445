@@ -25,7 +25,6 @@ public class AddMonthlySelection {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public MonthlySelection addMonthlySelection(MonthlySelection monthlyselection){
-		
 		return(msDao.addMonthlySelection(monthlyselection));
 	}
 }

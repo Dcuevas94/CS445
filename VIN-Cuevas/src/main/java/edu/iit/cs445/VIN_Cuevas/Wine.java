@@ -1,6 +1,8 @@
 package edu.iit.cs445.VIN_Cuevas;
 
 import java.time.Year;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Wine {
 	private String labelName;
@@ -14,6 +16,7 @@ public class Wine {
 	private Year year;
 	private WineVariety wineVariety;
 	private WineType wineType;
+	private List<Note> notes;
 	
 	public Wine(){
 		this.labelName = "The Mission";
@@ -25,6 +28,7 @@ public class Wine {
 		this.wineType = WineType.TABLE;
 		this.wineVariety = WineVariety.RED;
 		this.ID = IdGenerator.newIDwine();
+		notes = new ArrayList<Note>();
 	}
 	
 	public Wine(WineVariety winevariety, WineType winetype, String labelname, String grape, String region, String country, String maker, Year year){
@@ -37,6 +41,7 @@ public class Wine {
 		this.wineType = winetype;
 		this.wineVariety = winevariety;
 		this.ID = IdGenerator.newIDwine();
+		notes = new ArrayList<Note>();
 	}
 	
 	public void addRating(int rate){
@@ -146,6 +151,27 @@ public class Wine {
 
 	public WineType getWineType() {
 		return wineType;
+	}
+	
+	public List<Note> getNotes(){
+		return notes;
+	}
+	
+	public void setNotes(List<Note> notes){
+		this.notes = notes;
+	}
+	
+	public void addNote(Note note){
+		if(note.getContent().length()<40){
+			System.err.println("Length must be at least 40 characters");
+		} else if (note.getContent().length()>1024){
+			System.err.println("Note must be less than 1024 characters");
+		} else
+			notes.add(note);		
+	}
+	
+	public void deleteNote(Note note){
+		notes.remove(note);
 	}
 
 	public void setLabelName(String labelName) {

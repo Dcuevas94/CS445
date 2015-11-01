@@ -39,4 +39,20 @@ public class AddSubscriber {
 	public Subscriber getSubscriber(@PathParam("uid") String id) {
 		return(sDao.getSubsciber(id));
 	}
+	
+	//gets shipments of specific subscriber
+	@Path("/{uid}/shipments")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Collection<Shipments> getShipments(@PathParam("uid") String id){
+		return(sDao.getShipments(id));
+	}
+	
+	@Path("/{uid}/shipments")
+	@POST
+	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_FORM_URLENCODED})
+	@Produces(MediaType.APPLICATION_JSON)
+ 	public Shipments addShipment(@PathParam("uid") String id, Shipments shipment){
+		return(sDao.addShipment(id, shipment));
+	}
 }

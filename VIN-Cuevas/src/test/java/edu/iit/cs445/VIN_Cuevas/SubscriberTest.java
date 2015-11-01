@@ -19,7 +19,8 @@ public class SubscriberTest {
 
 
     private HttpServer server;
-    private WebTarget target;
+    @SuppressWarnings("unused")
+	private WebTarget target;
 
     @Before
     public void setUp() throws Exception {
@@ -37,7 +38,8 @@ public class SubscriberTest {
         target = c.target(Main.BASE_URI);
     }
 
-    @After
+    @SuppressWarnings("deprecation")
+	@After
     public void tearDown() throws Exception {
         server.stop();
     }
@@ -226,14 +228,36 @@ public class SubscriberTest {
 		assertEquals(s.getPhone(), "555-555");
 		assertEquals(s.getFacebook(), "steve@facebook.com");
 		assertEquals(s.getTwitter(), "steve@twitter.com");
+	} 
+	
+	@Test
+	public void test_addWines(){
+		Subscriber s = new Subscriber();
+		Wine wine = new Wine();
+		s.addWines(wine);
 	}
 	
 	@Test
 	public void test_toString(){
 		Subscriber s = new Subscriber("dan", "dan@g.com", "123456789", new Address("street", "city", "state", "010101"), "dan@fb.com", "dan@tw.com");
 		String output = "The name of the Subscriber is " +s.getName()+ " The email is " +s.getEmail()+
-    			" The phone number is " +s.getPhone()+" The address is "  +s.getAddress()+
+    			" The phone number is " +s.getPhone()+" the ID is: " +s.getID()+" The address is "  +s.getAddress()+
     			" The monthly selection is " +s.getPreference();
 		assertEquals(output, s.toString());
 	}
-}
+	
+	@Test
+	public void test_address(){
+		Subscriber sub1 = new Subscriber();
+		Subscriber sub2 = new Subscriber();
+		assertTrue(sub1.getAddress().isMatch(sub2.getAddress()));
+		sub1.getAddress().setCity("Chi-city");
+		assertFalse(sub1.getAddress().isMatch(sub2.getAddress()));
+		sub1.getAddress().setState("IL");
+		assertFalse(sub1.getAddress().isMatch(sub2.getAddress()));
+		sub1.getAddress().setStreet("Yeet street");
+		assertFalse(sub1.getAddress().isMatch(sub2.getAddress()));
+		sub1.getAddress().setZip("60666");
+		assertFalse(sub1.getAddress().isMatch(sub2.getAddress()));
+	}
+} 

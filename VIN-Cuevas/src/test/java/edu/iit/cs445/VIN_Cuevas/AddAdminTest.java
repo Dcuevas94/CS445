@@ -20,6 +20,7 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class AddAdminTest extends JerseyTest{
 	
 	private int admin1_id;

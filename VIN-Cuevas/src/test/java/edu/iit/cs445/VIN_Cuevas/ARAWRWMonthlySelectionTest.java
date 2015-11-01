@@ -17,6 +17,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class ARAWRWMonthlySelectionTest {
 	private HttpServer server;
     private WebTarget target;
@@ -37,7 +38,8 @@ public class ARAWRWMonthlySelectionTest {
         target = c.target(Main.BASE_URI);
     }
 
-    @After
+    @SuppressWarnings("deprecation")
+	@After
     public void tearDown() throws Exception {
         server.stop();
     }
@@ -45,24 +47,25 @@ public class ARAWRWMonthlySelectionTest {
 	@Test
 	public void test_RW_base(){
 		RW rwNew = new RW();
-		assertEquals(rwNew.getSelectionID(), 0);
+		assertNotNull(rwNew.getSelectionID());
 		//System.out.println(arNew.getMsWines());
 		Wine wine0 = new Wine();
 		rwNew.addWine(wine0);
 		assertNotNull(rwNew.getMsWines());
 //		System.out.println(rwNew.getYearmonth());
-		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-11"));
+		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-10"));
 	}
+	
 	
 	@Test
 	public void test_AR_base(){
 		AR ar = new AR();
-		assertEquals(ar.getSelectionID(), 1);
+		assertNotNull(ar.getSelectionID());
 		Wine wine1 = new Wine();
 		wine1.setWineVariety(WineVariety.RED);
 		ar.addWine(wine1);
 		assertNotNull(ar.getMsWines());
-		assertEquals(YearMonth.parse("2015-11"), ar.getYearmonth());
+		assertEquals(YearMonth.parse("2015-10"), ar.getYearmonth());
 		Wine wine2 = new Wine();
 		wine2.setWineVariety(WineVariety.WHITE);
 		ar.addWine(wine2);
@@ -75,7 +78,7 @@ public class ARAWRWMonthlySelectionTest {
 		Wine wine3 = new Wine();
 		aw.addWine(wine3);
 		assertNotNull(aw.getMsWines());
-		assertEquals(YearMonth.parse("2015-11"), aw.getYearmonth());
+		assertEquals(YearMonth.parse("2015-10"), aw.getYearmonth());
 		Wine wine4 = new Wine();
 		wine4.setWineVariety(WineVariety.WHITE);
 		aw.addWine(wine4);
@@ -83,14 +86,15 @@ public class ARAWRWMonthlySelectionTest {
 
 	@Test
 	public void test_monthlyselection_throughYearMonth(){
-		MonthlySelection ms = new MonthlySelection("2015-10") {
-			private List<Wine> wines = new ArrayList<Wine>();
-			@Override
-			void addWine(Wine w) {
-				wines.add(w);
-			}
-		};
+		AR ms = new AR("2015-10");
+//			private List<Wine> wines = new ArrayList<Wine>();
+//			@Override
+//			void addWine(Wine w) {
+//				wines.add(w);
+//			}
+//		};
 		Wine wine4 = new Wine();
+		
 		ms.addWine(wine4);
 		assertNotNull(ms.getMsWines());
 		assertNotNull(ms.getSelectionID());
@@ -107,5 +111,20 @@ public class ARAWRWMonthlySelectionTest {
 		
 		MonthlySelectionType.AR.setDescription("hella good");
 		assertEquals("hella good", MonthlySelectionType.AR.getDescription());
+	}
+	
+	@Test
+	public void test_RW(){
+		RW newRW = new RW("2015-12");
+		Wine wine = new Wine();
+		wine.setWineVariety(WineVariety.WHITE);
+		newRW.addWine(wine);
+	}
+	
+	@Test
+	public void test_AW(){
+		AW newAW = new AW("2015-12");
+		Wine wine = new Wine();
+		newAW.addWine(wine);
 	}
 }

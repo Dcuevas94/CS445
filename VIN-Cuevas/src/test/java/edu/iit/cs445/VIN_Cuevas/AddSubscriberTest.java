@@ -11,6 +11,7 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Collection;
 
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
@@ -22,6 +23,7 @@ import org.junit.Test;
 
 
 
+@SuppressWarnings("unused")
 public class AddSubscriberTest extends JerseyTest {
 
 	private int sub1_id;
@@ -37,14 +39,19 @@ public class AddSubscriberTest extends JerseyTest {
 		sub1.setEmail(email);
 		sub1.setPhone(phone);
 		sub1.setAddress(address);
+		//sub1.addShipments(new Shipments());
+		//System.out.println("This is the AddSubscriber response\nid:"+sub1.getID());
 		Entity<Subscriber> subscriberEntity = Entity.entity(sub1, MediaType.APPLICATION_JSON);
 		return(target("sub").request().post(subscriberEntity));
 	}
+	
+	//protected Response AddShipment()
 	
 	@Before
 	public void setupSubscribers(){
 		sub1_id = AddSubscriber("Tom", "tom@gmail.com", "123456789", new Address("123 S. LaSalle", "Chicago", "IL", "60609")).readEntity(Subscriber.class).getID();
 		sub2_id = AddSubscriber("Bob", "bob@gmail.com", "123123", new Address("324 S. State", "Chicago", "IL", "60632")).readEntity(Subscriber.class).getID();
+		//System.out.println(sub2_id);
 	}
 	
 	
@@ -70,6 +77,8 @@ public class AddSubscriberTest extends JerseyTest {
 		Subscriber response = target ("sub").path(Integer.toString(sub1_id)).request().get(Subscriber.class);
 		assertNotNull(response);
 		Subscriber responseSub = new Subscriber(response.getName(), response.getEmail(), response.getPhone(), response.getAddress(), response.getFacebook(), response.getTwitter());
+//		responseSub.addShipments(new Shipments());
+//		System.out.println(responseSub.getShipments());
 		assertEquals("Tom", responseSub.getName());
 		assertEquals("tom@gmail.com", responseSub.getEmail());
 		assertEquals("123456789", responseSub.getPhone());
@@ -98,6 +107,33 @@ public class AddSubscriberTest extends JerseyTest {
 	@Test
 	public void test_get_subscribers(){
 		Collection<Subscriber> response = target("sub").request().get(new GenericType<Collection<Subscriber>>(){} ); //getting all them subscribers tho
+		//System.out.println("reponse size: "  + response.size());
+		//System.out.println("Response: " +response.toString());
 		assertEquals(2,  response.size());
 	}
+	
+	@Test
+	public void test_addShipments(){
+		Subscriber subship = new Subscriber(); 
+		int sub3_id = subship.getID();
+		Entity<Subscriber> subscriberEntity = Entity.entity(subship, MediaType.APPLICATION_JSON);
+		System.out.println(target("sub").request().post(subscriberEntity));
+		System.out.println(target ("sub").path(Integer.toString(sub3_id)).request().get(Subscriber.class));
+		System.out.println(target("sub").request().get(new GenericType<Collection<Subscriber>>(){} ));
+		//System.out.println(subship.toString());
+		
+//		Shipments ship0 = new Shipments(new AW(), "2002-12");
+//		Shipments ship1 = new Shipments();
+//		target ("sub").path(Integer.toString(sub2_id)).request().get(Subscriber.class);
+//		Entity<Shipments> shipEntity = Entity.entity(ship0, MediaType.APPLICATION_JSON);
+//		for(int i=0; i<2; i++){
+//			System.out.println(target("sub/"+i+"/shipments").request().post(shipEntity));
+//		}
+		
+		
+		//Subscriber returnedSub = target("sub").path("1/shipments").request().get(Subscriber.class);
+		
+		
+	}
+	
 }
