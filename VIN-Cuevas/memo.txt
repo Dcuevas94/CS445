@@ -1,3 +1,4 @@
+========================BEGIN DOC=========================
 This project was done throughout the summer and the past 
 few weeks.
 
@@ -7,52 +8,45 @@ then came down to crunching out as much code as possible
 a lot of functionallity is missing, but the concepts would be 
 the same had there been better planning from the start.
 
-Shipments cannot be accessed through the subscriber
-but it can easily be made to seem like it did.
+Shipments cannot be posted, but if a shipment were 
+hard coded it would be able to GET it.
 
-no REST was implemented on shipments/monthlyselection
-these two came out to be difficult to deal with and 
-were deleted/redone multiple times. they would casue
-too many errors to deal with and were deleted from 
-the final build.
+MonthlySelection can also be returned, but none can be 
+posted through rest, unless again hard coded.
 
-revenue can be implemented, but without shipments or 
-monthlyselection, it's useless
+Revenue was implemented then deleted, but without shipments or 
+monthlyselection working, it's useless to imple
 
 =======HOW TO RUN THIS PROJECT=======
-=======Assuming you have eclipse=====
-===Otherwise, building will work, but
-not testing, or accessing most of the
-REST interface for some strange reason
+Run the make file, the default 'make' command runs the project
+>make
+when you finish running the project press enter and the http 
+server will terminate itself.
 
-====Import the project in eclipse====
-this should allow you to use maven,
-jeresy and grizzly2 straight out of the box
+You can go into any of the following to GET the data
+GET
+http://localhost:8080/vin/admin/
+http://localhost:8080/vin/admin/{aid}
+http://localhost:8080/vin/admin/monthly_selection
+http://localhost:8080/vin/sub/
+http://localhost:8080/vin/sub/{uid}
+http://localhost:8080/vin/sub/{uid}/shipments --Needs to exist
+http://localhost:8080/vin/wines/
+http://localhost:8080/vin/wines/{wid}
 
-right click on the porject and run as maven build...
-
-add the goal
-> "clean compile exec:java"
-
-this will clean up any old files, compile the project
-and then execute the project.
-
-after running the goal, you will see the url path
-this url path will lead you to something like:
-http://localhost:8080/vin/{somethinghere}.wadl
-
-the .wadl allows you to see the available REST commands
-
-you can go into any of the following to GET the data
+POST
 http://localhost:8080/vin/admin/
 http://localhost:8080/vin/sub/
+http://localhost:8080/vin/sub/{uid}/shipments --Needs to exist
 http://localhost:8080/vin/wines/
+http://localhost:8080/vin/wines/{wid}
 
-all three will display empty arrays in the browser.
 
 =====POSTING ITEMS=====
-to post anything into admin, sub or wines,
+To post anything into admin, sub or wines,
 use your either Google Chrome or Firefox.
+
+You can try posting via cli using curl, but it was not tested
 
 for Chrome, install the Postman - REST clinet 
 for FireFox, install the Poster client.
@@ -71,15 +65,22 @@ for wines:
 
 
 overall, this was a fun/hard/tear jerking experience.
-installing on a fresh ubuntu machine might not run properly
-if at all. I have only been able to make sure it works with some
-of the functionallity. Otherwise, it works perfectly fine 
-in my Macbook pro using eclipse to compile/execute the project.
+installing on a fresh ubuntu machine has been running on
+multiple attempts. Windows worked as well.
+Otherwise, it works perfectly fine in my Macbook pro using eclipse 
+to compile/execute the project.
 Also worked when compiling/executing through the command line.
-Running "mvn test" also worked through the command line.
 
-"mvn test" will run and complete in ubuntu, but it will show ZERO
-tests ran. Not sure why this happened.
+flowwing commands work in ubuntu
+mvn compile
+mvn exec:java
+mvn test
+mvn cobertura:cobertura
+
+Coverage html files can be found in the following directory
+VIN-Cuevas/target/site/cobertura/frame-summary-edu.iit.cs445.VIN_Cuevas.html
+or in the root directory.
+
 
 packaging the project into a jar also worked on my Mackbook Pro
 did not work in Ubuntu.

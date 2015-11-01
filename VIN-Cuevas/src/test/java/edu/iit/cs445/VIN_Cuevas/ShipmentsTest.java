@@ -36,7 +36,7 @@ public class ShipmentsTest {
 	public void test_year_month(){
 		Shipments ship3 = new Shipments();
 		System.out.println(ship3.getYearMonth());
-		assertEquals(ship3.getYearMonth(), YearMonth.parse("2015-10"));
+		assertEquals(ship3.getYearMonth(), YearMonth.parse("2015-11"));
 		ship3.setYearMonth(YearMonth.parse("2015-11"));
 		System.out.println(ship3.getYearMonth());
 		assertEquals(YearMonth.parse("2015-11"), ship3.getYearMonth());

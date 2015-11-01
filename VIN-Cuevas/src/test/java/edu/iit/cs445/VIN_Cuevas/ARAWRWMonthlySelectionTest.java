@@ -47,7 +47,7 @@ public class ARAWRWMonthlySelectionTest {
 		Wine wine0 = new Wine();
 		rwNew.addWine(wine0);
 		assertNotNull(rwNew.getMsWines());
-		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-10"));
+		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-11"));
 	}
 	
 	
@@ -59,7 +59,7 @@ public class ARAWRWMonthlySelectionTest {
 		wine1.setWineVariety(WineVariety.RED);
 		ar.addWine(wine1);
 		assertNotNull(ar.getMsWines());
-		assertEquals(YearMonth.parse("2015-10"), ar.getYearmonth());
+		assertEquals(YearMonth.parse("2015-11"), ar.getYearmonth());
 		Wine wine2 = new Wine();
 		wine2.setWineVariety(WineVariety.WHITE);
 		ar.addWine(wine2);
@@ -72,7 +72,7 @@ public class ARAWRWMonthlySelectionTest {
 		Wine wine3 = new Wine();
 		aw.addWine(wine3);
 		assertNotNull(aw.getMsWines());
-		assertEquals(YearMonth.parse("2015-10"), aw.getYearmonth());
+		assertEquals(YearMonth.parse("2015-11"), aw.getYearmonth());
 		Wine wine4 = new Wine();
 		wine4.setWineVariety(WineVariety.WHITE);
 		aw.addWine(wine4);
@@ -80,13 +80,13 @@ public class ARAWRWMonthlySelectionTest {
 
 	@Test
 	public void test_monthlyselection_throughYearMonth(){
-		AR ms = new AR("2015-10");
+		AR ms = new AR("2015-11");
 		Wine wine4 = new Wine();
 		
 		ms.addWine(wine4);
 		assertNotNull(ms.getMsWines());
 		assertNotNull(ms.getSelectionID());
-		assertEquals(YearMonth.parse("2015-10"), ms.getYearmonth());
+		assertEquals(YearMonth.parse("2015-11"), ms.getYearmonth());
 		
 		List<Wine> emptyWines = new ArrayList<Wine>();
 		emptyWines.clear();
