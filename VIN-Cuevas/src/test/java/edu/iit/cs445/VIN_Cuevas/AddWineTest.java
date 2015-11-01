@@ -70,8 +70,6 @@ public class AddWineTest extends JerseyTest{
 
 	@Test 
 	public void test_wine1_wineByID(){
-//		wine1_id = AddWine(WineVariety.RED, WineType.SPARKLING, "cali", "red", "West", "USA", "Johnson", Year.parse("2011")).readEntity(Wine.class).getID();
-//		wine2_id = AddWine(WineVariety.WHITE, WineType.TABLE, "blue", "red", "East", "USA", "Thompson", Year.parse("2008")).readEntity(Wine.class).getID();
 		Wine response = target("wines").path(Integer.toString(wine1_id)).request().get(Wine.class);
 		assertNotNull(response);
 		Wine responseWine = new Wine(response.getWineVariety(), response.getWineType(), response.getLabelName(), response.getGrape(), response.getRegion(), response.getCountry(), response.getMaker(), Year.parse(response.getYear()));
@@ -89,8 +87,6 @@ public class AddWineTest extends JerseyTest{
 	
 	@Test 
 	public void test_wine2_wineByID(){
-//		wine1_id = AddWine(WineVariety.RED, WineType.SPARKLING, "cali", "red", "West", "USA", "Johnson", Year.parse("2011")).readEntity(Wine.class).getID();
-//		wine2_id = AddWine(WineVariety.WHITE, WineType.TABLE, "blue", "red", "East", "USA", "Thompson", Year.parse("2008")).readEntity(Wine.class).getID();
 		Wine response = target("wines").path(Integer.toString(wine2_id)).request().get(Wine.class);
 		assertNotNull(response);
 		Wine responseWine = new Wine(response.getWineVariety(), response.getWineType(), response.getLabelName(), response.getGrape(), response.getRegion(), response.getCountry(), response.getMaker(), Year.parse(response.getYear()));
@@ -111,5 +107,4 @@ public class AddWineTest extends JerseyTest{
 		Collection<Wine> response = target("wines").request().get(new GenericType<Collection<Wine>>() {} );
 		assertEquals(2, response.size());
 	}
-	
 }

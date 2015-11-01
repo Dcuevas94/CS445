@@ -16,9 +16,6 @@ public class Shipments {
 	private YearMonth yearMonth;// = DateTimeFormatter.ofPattern("MM-yyyy");
 	private List<Note> notes;
 	private Date date;
-	//private List<Note> notes;
-	//private ArrayList<Integer> wineIDs = new ArrayList<>();
-	//MonthlySelection ms;
 	
 	public Shipments(){
 		this.id = IdGenerator.newIDship();
@@ -30,9 +27,6 @@ public class Shipments {
 		this.yearMonth = YearMonth.now();
 		this.notes = new ArrayList<Note>();
 		this.date = new Date();
-		//this.yearMonth = newDate.toString();
-		//this.yearMonth = Integer.toString(newDate.getMonth())+"-"+Integer.toString(newDate.getYear());
-		//wineIDs.add(this.id);
 	}
 	
 	public Shipments(MonthlySelection ms, String yearMonth){
@@ -46,7 +40,6 @@ public class Shipments {
 		this.yearMonth = YearMonth.now();
 		this.notes = new ArrayList<Note>();
 		this.date = new Date();
-		//wineIDs.add(id);
 	}
 	
 	public MonthlySelection getMonthlySelection(){

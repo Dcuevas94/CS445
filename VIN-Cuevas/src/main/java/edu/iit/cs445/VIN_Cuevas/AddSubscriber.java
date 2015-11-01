@@ -16,7 +16,6 @@ public class AddSubscriber {
 
 
 	@Context AddSubscriberDao sDao;
-	//SubscriberDao sDao = new SubscriberDao();
 	
 	@GET //all subscribers
 	@Produces(MediaType.APPLICATION_JSON)
@@ -32,16 +31,14 @@ public class AddSubscriber {
 		return(sDao.addSubscriber(subscriber));
 	}
 	
-	//gets individual subscriber
-	@Path("/{uid}")
+	@Path("/{uid}")	//gets individual subscriber
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Subscriber getSubscriber(@PathParam("uid") String id) {
 		return(sDao.getSubsciber(id));
 	}
 	
-	//gets shipments of specific subscriber
-	@Path("/{uid}/shipments")
+	@Path("/{uid}/shipments")	//gets shipments of specific subscriber
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Collection<Shipments> getShipments(@PathParam("uid") String id){

@@ -6,21 +6,26 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 default: 
-	mvn clean compile exec:java
+	mvn compile exec:java
 	
 clean:
-	mvn clean
+	mvn compile
 
 java: 
 	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get dist-upgrade
 	sudo apt-get install default-jre
 	sudo apt-get install default-jdk
 	sudo apt-get install maven
 	mvn -version
 
+chrome:
+	sudo apt-get install libxss1 libappindicator1 libindicator7
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+	sudo dpkg -i google-chrome*.deb
+
 all: 
-	sudo apt-get update
-	sudo apt-get install default-jre
-	sudo apt-get install default-jdk
-	mvn clean
+	make java
+	make chrome
 	make

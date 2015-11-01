@@ -3,7 +3,6 @@ package edu.iit.cs445.VIN_Cuevas;
 import java.util.ArrayList;
 
 public class AR extends MonthlySelection {
-	//private List<Wine> msRedWines = new ArrayList<Wine>();
 	
 	public AR() {
 		super();

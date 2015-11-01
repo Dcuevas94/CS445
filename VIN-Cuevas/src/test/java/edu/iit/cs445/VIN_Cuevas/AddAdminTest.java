@@ -57,8 +57,6 @@ public class AddAdminTest extends JerseyTest{
 
 	@Test
 	public void test_admin1_adminByID(){
-//		admin1_id = AddAdmin("Carol", "carol@gmail.com").readEntity(Admin.class).getID();
-//		admin2_id = AddAdmin("Rick", "rick@gmail.com").readEntity(Admin.class).getID();
 		Admin response = target("admin").path(Integer.toString(admin1_id)).request().get(Admin.class);
 		assertNotNull(response);
 		Admin responseAdmin = new Admin(response.getName(), response.getEmail());
@@ -69,8 +67,6 @@ public class AddAdminTest extends JerseyTest{
 	
 	@Test
 	public void test_admin2_adminByID(){
-//		admin1_id = AddAdmin("Carol", "carol@gmail.com").readEntity(Admin.class).getID();
-//		admin2_id = AddAdmin("Rick", "rick@gmail.com").readEntity(Admin.class).getID();
 		Admin response = target("admin").path(Integer.toString(admin2_id)).request().get(Admin.class);
 		assertNotNull(response);
 		Admin responseAdmin = new Admin(response.getName(), response.getEmail());
@@ -84,5 +80,4 @@ public class AddAdminTest extends JerseyTest{
 		Collection<Admin> response = target("admin").request().get(new GenericType<Collection<Admin>>() {} );
 		assertEquals(2,  response.size());
 	}
-	
 }

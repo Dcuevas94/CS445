@@ -27,10 +27,6 @@ public class AddMonthlySelectionDao {
 		String msID = Integer.toString(monthlyselection.getSelectionID());
 		monthlyselections.put(msID, monthlyselection);
 		msWineList.add((Wine) monthlyselection.getMsWines());
-//		if(monthlyselection.monthlyselectiontype == MonthlySelectionType.AR){
-//			AR arWines = new AR();
-//			arWines.addWine((Wine) msWineList);
-//		}
 		return monthlyselection;
 	}
 }

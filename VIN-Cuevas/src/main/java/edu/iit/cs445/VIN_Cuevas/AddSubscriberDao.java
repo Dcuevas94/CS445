@@ -13,9 +13,6 @@ private Map<String, Subscriber> subscribers;
 	
 	public AddSubscriberDao() {
 		subscribers = new ConcurrentHashMap<String, Subscriber>();
-		//Extra stuff for testing
-		//Subscriber sub1 = new Subscriber("Dan", "dcuevas@hawk.iit.edu", "23456789", new Address("State", "Chicago", "IL", "3456" ));
-		//addSubscriber(sub1);
 	}
 	
 	public Collection<Subscriber> getSubsciber(){
@@ -94,7 +91,6 @@ private Map<String, Subscriber> subscribers;
 	
 	@SuppressWarnings("unused")
 	private boolean userHasAccount(Subscriber sub){
-		//Iterator<Subscriber> eachSubscriber = subscribers.
 		Iterator<Entry<String, Subscriber>> entries = subscribers.entrySet().iterator();
 		Subscriber tempSubscriber;
 		while (entries.hasNext()){

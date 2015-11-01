@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 
 public class AW extends MonthlySelection {
-	//private List<Wine> msWhiteWines = new ArrayList<Wine>();
 	
 	public AW() {
 		super();

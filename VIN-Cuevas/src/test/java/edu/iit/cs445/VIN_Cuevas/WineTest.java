@@ -21,17 +21,12 @@ public class WineTest {
 
     @Before
     public void setUp() throws Exception {
-        // start the server
         server = Main.startServer();
-        // create the client
         Client c = ClientBuilder.newClient();
-
         // uncomment the following line if you want to enable
         // support for JSON in the client (you also have to uncomment
         // dependency on jersey-media-json module in pom.xml and Main.startServer())
-        // --
         // c.configuration().enable(new org.glassfish.jersey.media.json.JsonJaxbFeature());
-
         target = c.target(Main.BASE_URI);
     }
 
@@ -58,15 +53,6 @@ public class WineTest {
 		assertEquals(w.getRating(), 5, 0.0);
 		assertEquals(w.getNumberOfRatings(), 2);
 		assertEquals(w.isMatch(w), true);
-//		assertEquals(w.isMatch("hello"), false);
-//		assertEquals(w.isMatch(w.getCountry()), true);
-//		assertEquals(w.isMatch(w.getGrape()), true);
-//		assertEquals(w.isMatch(w.getMaker()), true);
-//		assertEquals(w.isMatch(w.getRegion()), true);
-//		assertEquals(w.isMatch(w.getYear()), true);
-//		assertEquals(w.isMatchType(w.getWineType().toString()), true);
-//		assertEquals(w.isMatch(w.getWineVariety().toString()), true);
-//		assertEquals(w.isMatch("Napa"), true);
 	}
 	
 	@Test
@@ -99,16 +85,6 @@ public class WineTest {
 		w.setMaker(w2.getMaker());
 		w.setYear(Year.parse(w2.getYear()));
 		assertEquals(w2.isMatch(w), true);
-//		assertEquals(w2.isMatch("hello"), false);
-//		assertEquals(w2.isMatch(w2.getCountry()), true);
-//		assertEquals(w2.isMatch(w2.getGrape()), true);
-//		assertEquals(w2.isMatch(w2.getMaker()), true);
-//		assertEquals(w2.isMatch(w2.getRegion()), true);
-//		assertEquals(w2.isMatch(w2.getYear()), true);
-//		assertEquals(w2.isMatchType(w2.getWineType().toString()), true);
-//		assertEquals(w2.isMatch(w2.getWineVariety().toString()), true);
-//		assertEquals(w2.isMatch("Napa"), false);
-//		assertEquals(w2.isMatch("hell"), true);
 	}
 	
 	@Test
@@ -145,7 +121,5 @@ public class WineTest {
 		assertEquals(w.getYear(), "2001");
 		assertEquals(w.getWineType(), WineType.SPARKLING);
 		assertEquals(w.getWineVariety(), WineVariety.WHITE);
-		
 	}
-
 }

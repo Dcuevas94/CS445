@@ -14,28 +14,24 @@ public class AppApplication extends ResourceConfig {
 		
 		packages("edu.iit.cs445.VIN_Cuevas;");
 		register(new AbstractBinder() {
-			
 			@Override
 			protected void configure() {
 				bind(dao).to(AddSubscriberDao.class);
 			}
 		});
 		register(new AbstractBinder() {
-			
 			@Override
 			protected void configure() {
 				bind(aDao).to(AddAdminDao.class);
 			}
 		});
 		register(new AbstractBinder() {
-			
 			@Override
 			protected void configure() {
 				bind(wDao).to(AddWineDao.class);
 			}
 		});
 		register(new AbstractBinder() {
-			
 			@Override
 			protected void configure() {
 				bind(msDao).to(AddMonthlySelectionDao.class);

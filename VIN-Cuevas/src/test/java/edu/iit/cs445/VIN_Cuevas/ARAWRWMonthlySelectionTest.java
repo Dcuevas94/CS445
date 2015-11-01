@@ -24,17 +24,13 @@ public class ARAWRWMonthlySelectionTest {
 
     @Before
     public void setUp() throws Exception {
-        // start the server
         server = Main.startServer();
-        // create the client
         Client c = ClientBuilder.newClient();
-
         // uncomment the following line if you want to enable
         // support for JSON in the client (you also have to uncomment
         // dependency on jersey-media-json module in pom.xml and Main.startServer())
         // --
         // c.configuration().enable(new org.glassfish.jersey.media.json.JsonJaxbFeature());
-
         target = c.target(Main.BASE_URI);
     }
 
@@ -48,11 +44,9 @@ public class ARAWRWMonthlySelectionTest {
 	public void test_RW_base(){
 		RW rwNew = new RW();
 		assertNotNull(rwNew.getSelectionID());
-		//System.out.println(arNew.getMsWines());
 		Wine wine0 = new Wine();
 		rwNew.addWine(wine0);
 		assertNotNull(rwNew.getMsWines());
-//		System.out.println(rwNew.getYearmonth());
 		assertEquals(rwNew.getYearmonth(), YearMonth.parse("2015-10"));
 	}
 	
@@ -87,12 +81,6 @@ public class ARAWRWMonthlySelectionTest {
 	@Test
 	public void test_monthlyselection_throughYearMonth(){
 		AR ms = new AR("2015-10");
-//			private List<Wine> wines = new ArrayList<Wine>();
-//			@Override
-//			void addWine(Wine w) {
-//				wines.add(w);
-//			}
-//		};
 		Wine wine4 = new Wine();
 		
 		ms.addWine(wine4);
@@ -107,8 +95,6 @@ public class ARAWRWMonthlySelectionTest {
 		ms.setYearmonth(YearMonth.parse("2014-10"));
 		assertEquals(YearMonth.parse("2014-10"), ms.getYearmonth());
 		assertEquals("All reds", MonthlySelectionType.AR.getDescription());
-		
-		
 		MonthlySelectionType.AR.setDescription("hella good");
 		assertEquals("hella good", MonthlySelectionType.AR.getDescription());
 	}
