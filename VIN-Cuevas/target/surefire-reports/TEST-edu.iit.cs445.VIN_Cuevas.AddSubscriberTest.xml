@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" time="0.419" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" time="0.424" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="net.sourceforge.cobertura.datafile" value="/Users/ivan/Documents/workspace/VIN-Cuevas/target/cobertura/cobertura.ser"/>
-    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf3476062711412495773.tmp"/>
+    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1674085697578816031.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/ivan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -64,9 +64,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="testAddSubscriber" time="0.126"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_sub1_SubscriberByID" time="0.088"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_sub2_SubscriberByID" time="0.064"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_get_subscribers" time="0.072"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_addShipments" time="0.069"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="testAddSubscriber" time="0.117"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_sub1_SubscriberByID" time="0.059"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_sub2_SubscriberByID" time="0.067"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_get_subscribers" time="0.074"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.AddSubscriberTest" name="test_addShipments" time="0.107"/>
 </testsuite>

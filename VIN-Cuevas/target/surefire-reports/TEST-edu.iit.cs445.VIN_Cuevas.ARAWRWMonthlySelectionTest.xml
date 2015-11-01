@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" time="0.212" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" time="0.192" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="net.sourceforge.cobertura.datafile" value="/Users/ivan/Documents/workspace/VIN-Cuevas/target/cobertura/cobertura.ser"/>
-    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf3476062711412495773.tmp"/>
+    <property name="classworlds.conf" value="/Users/ivan/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1674085697578816031.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/ivan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -64,10 +64,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_RW_base" time="0.072"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_AR_base" time="0.026"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_allWhite_base" time="0.029"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_monthlyselection_throughYearMonth" time="0.033"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_RW" time="0.026"/>
-  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_AW" time="0.026"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_RW_base" time="0.041"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_AR_base" time="0.036"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_allWhite_base" time="0.027"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_monthlyselection_throughYearMonth" time="0.03"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_RW" time="0.027"/>
+  <testcase classname="edu.iit.cs445.VIN_Cuevas.ARAWRWMonthlySelectionTest" name="test_AW" time="0.031"/>
 </testsuite>
