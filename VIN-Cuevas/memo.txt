@@ -2,11 +2,10 @@
 This project was done throughout the summer and the past 
 few weeks.
 
-initially using Test driven development (TDD) and 
-then came down to crunching out as much code as possible
+Initially using Test driven development (TDD) and 
+then came down to crunching out as much code as possible.
 
-a lot of functionallity is missing, but the concepts would be 
-the same had there been better planning from the start.
+A lot of functionallity is missing, but the concepts would be the same had there been better planning from the start.
 
 Shipments cannot be posted, but if a shipment were 
 hard coded it would be able to GET it.
