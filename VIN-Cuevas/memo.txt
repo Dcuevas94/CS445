@@ -1,26 +1,31 @@
 ========================BEGIN DOC=========================
-This project was done throughout the summer and the past 
-few weeks.
+This project was done throughout the spring semester, summer 
+and the past few weeks.
 
 Initially using Test driven development (TDD) and 
 then came down to crunching out as much code as possible.
 
-A lot of functionallity is missing, but the concepts would be the same had there been better planning from the start.
+A lot of functionality is missing, but the concepts would be 
+the same had there been better planning from the start.
 
-Shipments cannot be posted, but if a shipment were 
-hard coded it would be able to GET it.
+Shipments can be posted, but notes were not added.
 
-MonthlySelection can also be returned, but none can be 
+Monthly Selection can also be returned, but none can be 
 posted through rest, unless again hard coded.
 
 Revenue was implemented then deleted, but without shipments or 
-monthlyselection working, it's useless to imple
+monthly selection working, it's useless to implement anyways.
 
-=======HOW TO RUN THIS PROJECT=======
+==============HOW TO RUN THIS PROJECT=======================
 Run the make file, the default 'make' command runs the project
 >make
 when you finish running the project press enter and the http 
 server will terminate itself.
+
+Running on a fresh installation of Ubuntu will require updates
+and installation of java, run the following command to automate
+the process of installing them. Enter password as needed for root.
+>make all
 
 You can go into any of the following to GET the data
 GET
@@ -28,7 +33,7 @@ http://localhost:8080/vin/admin/
 http://localhost:8080/vin/admin/{aid}
 http://localhost:8080/vin/admin/monthly_selection
 http://localhost:8080/vin/sub/
-http://localhost:8080/vin/sub/{uid}
+http://localhost:8080/vin/sub/{aid}
 http://localhost:8080/vin/sub/{uid}/shipments --Needs to exist
 http://localhost:8080/vin/wines/
 http://localhost:8080/vin/wines/{wid}
@@ -41,46 +46,59 @@ http://localhost:8080/vin/wines/
 http://localhost:8080/vin/wines/{wid}
 
 
-=====POSTING ITEMS=====
-To post anything into admin, sub or wines,
-use your either Google Chrome or Firefox.
+===================POSTING ITEMS========================
+To post anything into admin, sub or wines.
+use either Google Chrome or Firefox.
 
-You can try posting via cli using curl, but it was not tested
+You can try posting via cli using curl, but it was not tested.
 
-for Chrome, install the Postman - REST clinet 
-for FireFox, install the Poster client.
+For Chrome, install the Postman - REST client 
+For Firefox, install the Poster client.
 
-both do the same thing.
+Both do the same thing, but the GUI on chrome is easier to use.
 
-you can post an empty or a json admin || sub || wine
-you can also retrieve those specific admin || sub || wine
-by their ID which can be found after posting an item.
-for admins:
-	http://localhost:8080/vin/admin/{adminID}
-for subscribers:
-	http://localhost:8080/vin/sub/{subscriberID}
-for wines:
-	http://localhost:8080/vin/wines/{wineID}
+Installing Chrome on Ubuntu with the following command:
+>make chrome.
 
-
-overall, this was a fun/hard/tear jerking experience.
-installing on a fresh ubuntu machine has been running on
+Overall, this was a fun/hard/tear jerking experience.
+Installing on a fresh Ubuntu machine has been tested and running on
 multiple attempts. Windows worked as well.
-Otherwise, it works perfectly fine in my Macbook pro using eclipse 
-to compile/execute the project.
-Also worked when compiling/executing through the command line.
+Otherwise, it works perfectly fine in my MacBook pro using eclipse 
+to compile/execute the project and it also worked when compiling/executing
+through the command line.
 
-flowwing commands work in ubuntu
-mvn compile
-mvn exec:java
-mvn test
-mvn cobertura:cobertura
+Please note that this project was done with Java 1.8 and some issues were found
+when using Ubuntu's default java installation. mvn compile caused a few issues.
+
+The following commands work in Ubuntu:
+>man compile --Might cause issues
+>mvn exec:java
+>mvn test
+>mvn cobertura:cobertura
+
+
+========================SUMMARY=========================
 
 Coverage html files can be found in the following directory
 VIN-Cuevas/target/site/cobertura/frame-summary-edu.iit.cs445.VIN_Cuevas.html
-or in the root directory.
 
+packaging the project into a jar also worked on my MacBook Pro
+did not work in Ubuntu and was removed from the project.
 
-packaging the project into a jar also worked on my Mackbook Pro
-did not work in Ubuntu.
+Approximately 85 hours were invested in this final version, 
+including testing, implementing, planning and learning REST 
+implementations and REST testing. 
+About 20 hours have been invested in figuring out how to have the project
+run properly in a fresh installation of Ubuntu.
+Biggest challenge has been getting the project to work outside of a Mac OS X
+and windows environment. For some reason it was significantly more challenging 
+to run properly in Ubuntu than in either of the other OS's. Learning REST 
+implementations were difficult for the first half hour, afterwards it was a breeze
+to implement. Testing all the branches on a REST interface was difficult and time
+consuming compared to all the other testing done.
+
+Recommendations: Compared to previous projects, this one was significantly more 
+complex and vague for the majority of the class. Less time should be spent on 
+videos that can be viewed from home and more time on working through the 
+complete requirements without any vagueness.
 ========================END OF DOC=========================
